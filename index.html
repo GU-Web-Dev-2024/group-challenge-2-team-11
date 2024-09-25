@@ -6,38 +6,40 @@
     <title>Recipe Submission Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
 
         .form-container {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
             max-width: 600px;
             margin: 20px auto;
             padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            background-color: #ffffff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
         }
 
-        .form-container:hover {
-            transform: scale(1.02);
+        .form-container h2 {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #333;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            margin-bottom: 15px;
-            transition: all 0.3s ease-in-out;
+            grid-column: span 2;
         }
 
         .form-group label {
             margin-bottom: 5px;
+            color: #444;
         }
 
         .form-group input,
@@ -46,50 +48,36 @@
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #2844a7;
-            box-shadow: 0 0 5px rgba(40, 68, 167, 0.5);
-            transform: scale(1.02);
+            background-color: #f9f9f9;
         }
 
         .form-group input[type="file"] {
-            padding: 0;
+            padding: 5px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
         }
 
         .submit-btn {
-            padding: 10px 15px;
+            padding: 12px 20px;
             background-color: #2844a7;
             color: white;
             font-size: 16px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            grid-column: span 2;
+            text-align: center;
         }
 
         .submit-btn:hover {
             background-color: #218838;
-            transform: translateY(-2px);
         }
 
         @media (min-width: 600px) {
             .form-group {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .form-group label {
-                width: 30%;
-            }
-
-            .form-group input, 
-            .form-group textarea {
-                width: 65%;
+                grid-column: span 1;
             }
         }
     </style>
@@ -97,6 +85,7 @@
 <body>
 
     <div class="form-container">
+        <h2>Submit Your Recipe</h2>
         <form action="https://gu-web-dev-2024.github.io/fake-form-submission/submission.html" method="get" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="recipe-name">Recipe Name:</label>
