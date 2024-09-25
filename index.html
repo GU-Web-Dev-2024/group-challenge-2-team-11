@@ -10,8 +10,9 @@
         }
     
         .form-container {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-column-start: 1;
+            grid-column-end: 3;
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
@@ -21,8 +22,7 @@
         }
     
         .form-group {
-            display: flex;
-            flex-direction: column;
+            display: grid;
             margin-bottom: 15px;
         }
     
@@ -56,16 +56,11 @@
             background-color: #218838;
         }
 
-        /* Flexbox layout */
         form {
-            display: flex;
-            flex-direction: column;
+            display: grid;
         }
         @media (min-width: 600px) {
             .form-group {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
             }
             .form-group label {
                 width: 30%;
