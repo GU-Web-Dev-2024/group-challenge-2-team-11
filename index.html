@@ -1,1 +1,121 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Recipe Submission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+    
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+    
+        .form-group label {
+            margin-bottom: 5px;
+        }
+    
+        .form-group input,
+        .form-group textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    
+        .form-group input[type="file"] {
+            padding: 0;
+        }
+    
+        .submit-btn {
+            padding: 10px 15px;
+            background-color: #2844a7;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Flexbox layout */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 600px) {
+            .form-group {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .form-group label {
+                width: 30%;
+            }
+            .form-group input, .form-group textarea {
+                width: 65%;
+            }
+        }
+
+    </style>
+    </head>
+    
+    <body>
+    
+        <div class="form-container">
+            <form action="#" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="recipe-name">Recipe Name:</label>
+                    <input type="text" id="recipe-name" name="recipe-name" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="recipe-description">Recipe Description:</label>
+                    <textarea id="recipe-description" name="recipe-description" rows="4" required></textarea>
+                </div>
+    
+                <div class="form-group">
+                    <label for="prep-time">Preparation Time (in minutes):</label>
+                    <input type="number" id="prep-time" name="prep-time" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="ingredients">Ingredients:</label>
+                    <input type="text" id="ingredients" name="ingredients" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="instructions">Cooking Instructions:</label>
+                    <input type="text" id="instructions" name="instructions" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="recipe-image">Upload Recipe Image:</label>
+                    <input type="file" id="recipe-image" name="recipe-image" accept="image/*" required>
+                </div>
+    
+                <button type="submit" class="submit-btn">Submit Recipe</button>
+            </form>
+        </div>
+    
+    </body>
+    
+    </html>
